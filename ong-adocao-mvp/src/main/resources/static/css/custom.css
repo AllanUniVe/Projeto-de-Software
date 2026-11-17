@@ -1,14 +1,116 @@
+:root {
+    --brand-green: #287452;
+    --brand-green-dark: #1f5d40;
+    --page-background: #f3f6f2;
+    --text-primary: #26332c;
+    --focus-ring: rgba(40, 116, 82, 0.22);
+}
+
 body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    color: #212529;
+    color: var(--text-primary);
+    line-height: 1.55;
+}
+
+body.bg-light {
+    background-color: var(--page-background) !important;
+}
+
+.navbar.bg-dark {
+    background: linear-gradient(110deg, #1d4937, #2d654c) !important;
+}
+
+.navbar-brand {
+    letter-spacing: 0.01em;
+}
+
+main.container {
+    padding-bottom: 2rem;
+}
+
+.row.g-3 .card {
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.row.g-3 .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.75rem 1.5rem rgba(32, 57, 43, 0.12) !important;
+}
+
+.row.g-3 .card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.card.p-4 {
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(32, 57, 43, 0.08) !important;
+}
+
+.btn-success {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+}
+
+.btn-success:hover,
+.btn-success:focus-visible {
+    background-color: var(--brand-green-dark);
+    border-color: var(--brand-green-dark);
 }
 
 .btn, .form-control, .form-select {
     min-height: 44px;
 }
 
+.form-control,
+.form-select {
+    border-color: #d3ddd5;
+    border-radius: 0.65rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--brand-green);
+    box-shadow: 0 0 0 0.25rem var(--focus-ring);
+}
+
+.form-check-input:checked {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+}
+
 a.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+@media (max-width: 575.98px) {
+    .row.g-3 .card-img-top {
+        height: 200px;
+    }
+
+    .d-flex.justify-content-center > .btn {
+        flex: 1 1 140px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .row.g-3 .card {
+        transition: none;
+    }
+
+    .row.g-3 .card:hover {
+        transform: none;
+    }
 }
