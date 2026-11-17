@@ -4,7 +4,7 @@ body {
 }
 
 .btn, .form-control, .form-select {
-    min-height: 44px; /* Atende ao requisito de alvo de toque mínimo */
+    min-height: 44px;
 }
 
 a.btn {
