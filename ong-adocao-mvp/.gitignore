@@ -1,0 +1,29 @@
+# Maven build output
+/target/
+/out/
+
+# Test and analysis reports
+/reports/
+/test-output/
+
+# Java runtime artifacts
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# IDE metadata
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+Thumbs.db
